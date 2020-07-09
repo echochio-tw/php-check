@@ -20,11 +20,12 @@ Debug Output:
 
                     // Outer loop go go through the alphabet for the
                     // first position in our "possible" pre-hash text
-                   set_time_limit(60);
-                   for($i=0; $i<100; $i++ ) {
+                   set_time_limit(0);
+                   for($i=0; $i<10000; $i++ ) {
                       if ($i < 10){$try= "000".(string)$i;}
                       elseif ($i < 100){$try= "00".(string)$i;}
                       elseif ($i < 1000){$try= "0".(string)$i;}
+                      else {$try= (string)$i;}
                         $check = hash('md5', $try);
                         if ( $check == $md5 ) {
                                 $goodtext = $try;
